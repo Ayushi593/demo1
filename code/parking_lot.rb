@@ -11,7 +11,7 @@ class ParkingLot
 	def park_vehicle(vehicle_number, vehicle_type)
 		next_free_slot = next_free_slot(vehicle_type)
 		unless next_free_slot.nil?
-      puts "Allocated slot number : #{ next_free_slot.id }"
+      puts "Allocated #{vehicle_type} slot #{ next_free_slot.id }"
       next_free_slot.park_vehicle(vehicle_number, vehicle_type)
     end
 	end
@@ -21,7 +21,7 @@ class ParkingLot
 		slot_number = slot_number.to_i
     if slot_number >= 0 && slot_number <= @slots[vehicle_type].length
       @slots[vehicle_type][slot_number].unpark
-      puts "Slot number #{ slot_number.to_i + 1} is free "
+      puts "Slot number #{ slot_number.to_i + 1} is now free "
     else
       puts "Invalid slot number"
     end
