@@ -1,6 +1,7 @@
 require_relative './parking_slot'
 require 'pry'
 class ParkingLot
+	attr_accessor :slots
 	def initialize(slots)
 		@slots = slots
 		@slots.each do |vehicle_type, number_of_slots|
